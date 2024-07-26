@@ -16,13 +16,13 @@ This project is a robust fullstack web application developed with React for the 
 
 **IAM Integration:** AWS Identity and Access Management (IAM) is used to manage permissions and control access to AWS resources. IAM roles and users are configured to ensure secure and precise access controls for different parts of the application.
 
-**Access Management: **Granular access policies are set up for different AWS services, enhancing security and operational efficiency.
+**Access Management:** Granular access policies are set up for different AWS services, enhancing security and operational efficiency.
 
 ### Deployment & Infrastructure:
 
-**Hosting: ** The application is deployed on AWS Amplify, providing a streamlined deployment process with continuous integration and delivery (CI/CD) capabilities.
+**Hosting:**The application is deployed on AWS Amplify, providing a streamlined deployment process with continuous integration and delivery (CI/CD) capabilities.
 
-**Serverless Functions: ** AWS Lambda functions are employed to handle backend logic and integrate with the GraphQL API, supporting a serverless architecture that scales automatically.
+**Serverless Functions:**AWS Lambda functions are employed to handle backend logic and integrate with the GraphQL API, supporting a serverless architecture that scales automatically.
 
 
 
