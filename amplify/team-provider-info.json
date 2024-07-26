@@ -17,6 +17,12 @@
       },
       "api": {
         "mynotes": {}
+      },
+      "function": {
+        "S3Triggerdc42a5d7": {
+          "deploymentBucketName": "amplify-mynotes-staging-b2b56-deployment",
+          "s3Key": "amplify-builds/S3Triggerdc42a5d7-6a475541666d35456861-build.zip"
+        }
       }
     }
   }

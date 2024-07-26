@@ -84,7 +84,7 @@ export default function App() {
           width="70%"
           margin="0 auto"
         >
-          <Heading level={1}>My Notes App</Heading>
+          <Heading level={1}>Anushka's Journal</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
             <Flex
               direction="column"
@@ -94,7 +94,7 @@ export default function App() {
             >
               <TextField
                 name="name"
-                placeholder="Note Name"
+                placeholder="Title"
                 label="Note Name"
                 labelHidden
                 variation="quiet"
@@ -102,7 +102,7 @@ export default function App() {
               />
               <TextField
                 name="description"
-                placeholder="Note Description"
+                placeholder="Description"
                 label="Note Description"
                 labelHidden
                 variation="quiet"
