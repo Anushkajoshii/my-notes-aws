@@ -7,13 +7,11 @@ import {
   Heading,
   Flex,
   View,
-  Image,
   Grid,
   Divider,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
-import { getUrl, uploadData } from "@aws-amplify/storage";
 import { DataStore } from "@aws-amplify/datastore";
 import { Note } from "./models"; // Import your Note model from the generated models
 import outputs from "./aws-exports";
@@ -31,27 +29,7 @@ export default function App() {
   async function fetchNotes() {
     try {
       const notes = await DataStore.query(Note);
-      const updatedNotes = await Promise.all(
-        notes.map(async (note) => {
-          if (note.image) {
-            try {
-              // Use 'key' instead of 'path' for S3
-              const linkToStorageFile = await getUrl({
-                key: `media/${note.image}`,
-              });
-              return {
-                ...note,
-                image: linkToStorageFile // Use new URL for image
-              };
-            } catch (error) {
-              console.error('Error fetching image URL:', error);
-            }
-          }
-          return note; // Return note without modifications if there's no image
-        })
-      );
-      console.log(updatedNotes);
-      setNotes(updatedNotes);
+      setNotes(notes);
     } catch (error) {
       console.error('Error fetching notes:', error);
     }
@@ -68,18 +46,11 @@ export default function App() {
         new Note({
           name: form.get("name"),
           description: form.get("description"),
-          image: imageFile ? imageFile.name : '', // Only set image name if image is provided
+          // No image handling
         })
       );
 
       console.log(newNote);
-
-      if (imageFile) {
-        await uploadData({
-          key: `media/${newNote.image}`, // Correct usage of key for S3
-          data: imageFile,
-        }).result;
-      }
 
       fetchNotes(); // Refresh notes after creation
       event.target.reset();
@@ -137,13 +108,7 @@ export default function App() {
                 variation="quiet"
                 required
               />
-              <View
-                name="image"
-                as="input"
-                type="file"
-                alignSelf={"end"}
-                accept="image/png, image/jpeg"
-              />
+              {/* Removed image input */}
               <Button type="submit" variation="primary">
                 Create Note
               </Button>
@@ -174,13 +139,7 @@ export default function App() {
                   <Heading level="3">{note.name}</Heading>
                 </View>
                 <Text fontStyle="italic">{note.description}</Text>
-                {note.image && (
-                  <Image
-                    src={note.image}
-                    alt={`visual aid for ${note.name}`}
-                    style={{ width: 400 }}
-                  />
-                )}
+                {/* Removed image display */}
                 <Button
                   variation="destructive"
                   onClick={() => deleteNote(note)}
