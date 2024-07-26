@@ -26,7 +26,9 @@ This project is a robust fullstack web application developed with React for the 
 
 
 
-https://github.com/user-attachments/assets/dea07119-fbae-47a2-b7a3-c1d8b0e1dde2
+https://github.com/user-attachments/assets/cb73d418-d9ca-44f2-8638-3e46060874e3
+
+
 
 
 
