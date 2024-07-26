@@ -38,7 +38,7 @@ export default function App() {
   async function createNote(event) {
     event.preventDefault();
     const form = new FormData(event.target);
-    const imageFile = form.get("image");
+    // const imageFile = form.get("image");
 
     try {
       // Create new note using DataStore

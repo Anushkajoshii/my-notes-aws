@@ -50,11 +50,5 @@
       "service": "Lambda"
     }
   },
-  "storage": {
-    "awsnotes": {
-      "dependsOn": [],
-      "providerPlugin": "awscloudformation",
-      "service": "S3"
-    }
-  }
+  "storage": {}
 }
