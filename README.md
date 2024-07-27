@@ -24,6 +24,27 @@ This project is a robust fullstack web application developed with React for the 
 
 **Serverless Functions:**AWS Lambda functions are employed to handle backend logic and integrate with the GraphQL API, supporting a serverless architecture that scales automatically.
 
+**Project Strucutre:**
+/my-app
+  ├── src
+  │   ├── components
+  │   │   ├── Auth.js
+  │   │   ├── Notes.js
+  │   │   └── ...
+  │   ├── graphql
+  │   │   ├── mutations.js
+  │   │   ├── queries.js
+  │   │   └── subscriptions.js
+  │   ├── App.js
+  │   ├── index.js
+  │   └── aws-exports.js
+  ├── public
+  ├── amplify
+  └── ...
+
+
+
+
 
 
 https://github.com/user-attachments/assets/cb73d418-d9ca-44f2-8638-3e46060874e3
